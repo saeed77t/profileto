@@ -35,3 +35,29 @@ function profileto_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'profileto_pingback_header' );
+
+
+
+/**
+ * Proper way to enqueue scripts and styles.
+ */
+function profiletoLoadScripts() {
+
+    wp_enqueue_script( 'profileto-main', PROFILETO_THEME_URI . '/js/main.js', [], PROFILETO_THEME_VERSION, true );
+    wp_enqueue_script( 'profileto-custom', PROFILETO_THEME_URI. '/js/custom.js', [], PROFILETO_THEME_VERSION, true );
+
+
+
+}
+
+add_action( 'wp_enqueue_scripts', 'profiletoLoadScripts' );
+
+
+
+function profiletoLoadStyle() {
+    wp_enqueue_style( 'resourceboy-style', PROFILETO_THEME_URI . '/style.css', array(), PROFILETO_THEME_VERSION );
+    wp_enqueue_style( 'resourceboy-custom-style', PROFILETO_THEME_URI . '/assets/customStyle.css', array(), PROFILETO_THEME_VERSION );
+}
+
+add_action( 'wp_enqueue_scripts', 'profiletoLoadStyle' );
+
