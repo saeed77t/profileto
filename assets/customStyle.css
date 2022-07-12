@@ -21,7 +21,7 @@ label.userformIn {
 }
 
 input.userformIn:not([type=submit]):not([type=checkbox]),
-textarea.userformIn {
+textarea.userformIn  {
     resize: none;
     padding: 0.3rem 0.8rem;
     margin-bottom: 1rem;
@@ -33,12 +33,12 @@ textarea.userformIn {
     box-shadow: 5px 5px 8px rgba(165, 165, 165, 0), -5px -5px 8px rgba(235, 235, 235, 0), inset 5px 5px 8px rgba(165, 165, 165, 0.8), inset -5px -5px 8px rgba(235, 235, 235, 0.8);
 }
 input.userformIn:not([type=submit]):not([type=checkbox]):valid,
-textarea.userformIn:valid {
+textarea.userformIn:valid   {
     color: #00c869;
     text-shadow: 0 0 2px #00dc69;
 }
 input.userformIn:not([type=submit]):not([type=checkbox]):invalid,
-textarea.userformIn:invalid {
+textarea.userformIn:invalid  {
     color: #fe5567;
     text-shadow: 0 0 2px #fe5567;
 }
@@ -122,8 +122,9 @@ label.userformIn input.userformIn:checked ~ .checkbox-custom-outer::after {
     filter: blur(1px);
 }
 
-input.userformIn[type=submit] {
+input.userformIn[type=submit]   {
     width: 100%;
+    text-align: center;
     margin: auto;
     padding: 1rem;
     border: none;
@@ -142,6 +143,25 @@ input.userformIn[type=submit]:focus {
     color: #00dc69;
     text-shadow: 0 0 2px #00dc69;
     box-shadow: 5px 5px 8px rgba(165, 165, 165, 0), -5px -5px 8px rgba(235, 235, 235, 0), inset 5px 5px 8px rgba(165, 165, 165, 0.8), inset -5px -5px 8px rgba(235, 235, 235, 0.8);
+}
+.added {
+    width: 100%;
+    height: 60px;
+    display: inline-table;
+    text-align: center;
+    margin: auto;
+    padding: 1rem;
+    border: none;
+    border-radius: 10rem;
+    background: gainsboro;
+    color: #646464;
+    transition: all 0.3s ease;
+    box-shadow: 5px 5px 8px #b9b9b9, -5px -5px 8px #ebebeb;
+    margin-bottom: 20px;
+
+}
+.wpcf7-response-output {
+    border: none;
 }
 
 @media (max-width: 767px) {

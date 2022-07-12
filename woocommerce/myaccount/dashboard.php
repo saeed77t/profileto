@@ -48,7 +48,7 @@ $allowed_html = array(
 
 <div role="form" class="wpcf7 userIform" id="wpcf7-f11-p126-o1" lang="en-US" dir="ltr">
     <div class="screen-reader-response"></div>
-    <form action="" method="post">
+    <form action="<?php  echo PROFILETO_THEME_URI.DIRECTORY_SEPARATOR.'inc'.DIRECTORY_SEPARATOR.'userform-action.php'?>" method="post">
         <div style="display: none;">
 <!--            <input class="userformIn" type="hidden" name="_wpcf7" value="11">-->
             <input class="userformIn" type="hidden" name="ID" value="<?php echo get_current_user_id(); ?>">
@@ -84,66 +84,116 @@ $allowed_html = array(
                 <span class="wpcf7-form-control-wrap additional-comments"><textarea  class="userformIn" name="about" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" id="input-comments" aria-invalid="false" placeholder="   درباره من ..... "></textarea></span>
             </div>
             <div class="col-1"></div>
-            <div class="col-12">
-                <div class="row">
-                    <div class="col-12 col-md-6">
-            <span class="wpcf7-form-control-wrap services">
-              <span class="wpcf7-form-control wpcf7-checkbox wpcf7-validates-as-required" id="input-services">
-                <span class="wpcf7-list-item first">
-                  <label class="userformIn">
-                    <input class="userformIn" type="checkbox" name="services[]" value="Resume Writing">
-                    <span class="checkbox-custom-outer"></span>
-                    <span class="wpcf7-list-item-label">Resume Writing</span></label>
+<!--            <div class="col-12">-->
+<!--                <div class="row">-->
+<!--                    <div class="col-12 col-md-6">-->
+<!--            <span class="wpcf7-form-control-wrap services">-->
+<!--              <span class="wpcf7-form-control wpcf7-checkbox wpcf7-validates-as-required" id="input-services">-->
+<!--                <span class="wpcf7-list-item first">-->
+<!--                  <label class="userformIn">-->
+<!--                    <input class="userformIn" type="checkbox" name="services[]" value="Resume Writing">-->
+<!--                    <span class="checkbox-custom-outer"></span>-->
+<!--                    <span class="wpcf7-list-item-label">Resume Writing</span></label>-->
+<!--                </span>-->
+<!--                <br>-->
+<!--                <span class="wpcf7-list-item">-->
+<!--                  <label class="userformIn">-->
+<!--                    <input  class="userformIn" type="checkbox" name="services[]" value="Interview Training">-->
+<!--                    <span  class="checkbox-custom-outer"></span>-->
+<!--                    <span class="wpcf7-list-item-label">Interview Training</span></label>-->
+<!--                </span>-->
+<!--                <br>-->
+<!--                <span class="wpcf7-list-item">-->
+<!--                  <label class="userformIn">-->
+<!--                    <input class="userformIn" type="checkbox" name="services[]" value="Relationship Skills">-->
+<!--                    <span class="checkbox-custom-outer"></span>-->
+<!--                    <span class="wpcf7-list-item-label">Relationship Skills</span></label>-->
+<!--                </span>-->
+<!--                <br>-->
+<!--              </span>-->
+<!--            </span>-->
+<!--                    </div>-->
+<!--                    <div class="col-12 col-md-6">-->
+<!--            <span class="wpcf7-form-control-wrap services">-->
+<!--              <span class="wpcf7-form-control wpcf7-checkbox wpcf7-validates-as-required" id="input-services-2">-->
+<!--                <span class="wpcf7-list-item">-->
+<!--                  <label  class="userformIn" >-->
+<!--                    <input  class="userformIn" type="checkbox" name="services[]" value="Online Application Education">-->
+<!--                    <span class="checkbox-custom-outer"></span>-->
+<!--                    <span class="wpcf7-list-item-label">Online Application Education</span></label>-->
+<!--                </span>-->
+<!--                <br>-->
+<!--                <span class="wpcf7-list-item">-->
+<!--                  <label  class="userformIn" >-->
+<!--                    <input  class="userformIn" type="checkbox" name="services[]" value="LinkedIn Development">-->
+<!--                    <span class="checkbox-custom-outer"></span>-->
+<!--                    <span class="wpcf7-list-item-label">LinkedIn Development</span></label>-->
+<!--                </span>-->
+<!--                <br>-->
+<!--                <span class="wpcf7-list-item last">-->
+<!--                  <label  class="userformIn">-->
+<!--                    <input   class="userformIn" type="checkbox" name="services[]" value="Securing the Job">-->
+<!--                    <span class="checkbox-custom-outer"></span>-->
+<!--                    <span class="wpcf7-list-item-label">Securing the Job</span></label>-->
+<!--                </span>-->
+<!--              </span>-->
+<!--            </span>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+            <div class="col-4 col-md-4"></div>
+            <div class="col-4 col-md-4">
+                <span class="added">  <label class="userformIn" for="input-image">عکس یا لوگو</label>  <input  class="" type="file"   accept="image/png, image/jpeg" name="image" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" id="input-image" aria-required="true" aria-invalid="false" placeholder="عکس یا لوگو" alt="عکس یا لوگو"></span>
+            </div>
+            <div class="col-4 col-md-4"></div>
+            <div class="col-4 col-md-4" >
+                <span class="added">
+                    <input type="text" id="socialLink1" class="userformIn" name="socialLink1" value="" placeholder="لینک شبکه اجتماعی">
+                   <label class="userformIn" for="socialimage1">انتخاب لوگوی شبکه اجتماعی</label> <input type="file"  accept="image/png, image/jpeg" id="socialimage1" name="socialimage1">
                 </span>
-                <br>
-                <span class="wpcf7-list-item">
-                  <label class="userformIn">
-                    <input  class="userformIn" type="checkbox" name="services[]" value="Interview Training">
-                    <span  class="checkbox-custom-outer"></span>
-                    <span class="wpcf7-list-item-label">Interview Training</span></label>
+            </div>
+            <div class="col-4 col-md-4" >
+                <span class="added">
+                    <input type="text" id="socialLink2" class="userformIn" name="socialLink2" value="" placeholder="لینک شبکه اجتماعی">
+                   <label class="userformIn" for="socialimage2">انتخاب لوگوی شبکه اجتماعی</label> <input type="file"  accept="image/png, image/jpeg" id="socialimage2" name="socialimage2">
                 </span>
-                <br>
-                <span class="wpcf7-list-item">
-                  <label class="userformIn">
-                    <input class="userformIn" type="checkbox" name="services[]" value="Relationship Skills">
-                    <span class="checkbox-custom-outer"></span>
-                    <span class="wpcf7-list-item-label">Relationship Skills</span></label>
+            </div>
+            <div class="col-4 col-md-4" >
+                <span class="added">
+                    <input type="text" id="socialLink3" class="userformIn" name="socialLink3" value="" placeholder="لینک شبکه اجتماعی">
+                   <label class="userformIn" for="socialimage3">انتخاب لوگوی شبکه اجتماعی</label> <input type="file"  accept="image/png, image/jpeg" id="socialimage3" name="socialimage3">
                 </span>
-                <br>
-              </span>
-            </span>
-                    </div>
-                    <div class="col-12 col-md-6">
-            <span class="wpcf7-form-control-wrap services">
-              <span class="wpcf7-form-control wpcf7-checkbox wpcf7-validates-as-required" id="input-services-2">
-                <span class="wpcf7-list-item">
-                  <label  class="userformIn" >
-                    <input  class="userformIn" type="checkbox" name="services[]" value="Online Application Education">
-                    <span class="checkbox-custom-outer"></span>
-                    <span class="wpcf7-list-item-label">Online Application Education</span></label>
+            </div>
+            <div class="col-4 col-md-4" >
+                <span class="added">
+                    <input type="text" id="socialLink4" class="userformIn" name="socialLink4" value="" placeholder="لینک شبکه اجتماعی">
+                   <label class="userformIn" for="socialimage4">انتخاب لوگوی شبکه اجتماعی</label> <input type="file"  accept="image/png, image/jpeg" id="socialimage4" name="socialimage4">
                 </span>
-                <br>
-                <span class="wpcf7-list-item">
-                  <label  class="userformIn" >
-                    <input  class="userformIn" type="checkbox" name="services[]" value="LinkedIn Development">
-                    <span class="checkbox-custom-outer"></span>
-                    <span class="wpcf7-list-item-label">LinkedIn Development</span></label>
+            </div>
+            <div class="col-4 col-md-4" >
+                <span class="added">
+                    <input type="text" id="socialLink5" class="userformIn" name="socialLink5" value="" placeholder="لینک شبکه اجتماعی">
+                   <label class="userformIn" for="socialimage5">انتخاب لوگوی شبکه اجتماعی</label> <input type="file"  accept="image/png, image/jpeg" id="socialimage5" name="socialimage5">
                 </span>
-                <br>
-                <span class="wpcf7-list-item last">
-                  <label  class="userformIn">
-                    <input   class="userformIn" type="checkbox" name="services[]" value="Securing the Job">
-                    <span class="checkbox-custom-outer"></span>
-                    <span class="wpcf7-list-item-label">Securing the Job</span></label>
+            </div>
+            <div class="col-4 col-md-4" >
+                <span class="added">
+                    <input type="text" id="socialLink6" class="userformIn" name="socialLink6" value="" placeholder="لینک شبکه اجتماعی">
+                   <label class="userformIn" for="socialimage6">انتخاب لوگوی شبکه اجتماعی</label> <input type="file"  accept="image/png, image/jpeg" id="socialimage6" name="socialimage6">
                 </span>
-              </span>
-            </span>
-                    </div>
-                </div>
             </div>
 
+            <div class="col-3 col-md-3"></div>
+            <div class="col-6 col-md-6" >
+                <span class="added">
+
+                   <label class="userformIn" for="resume">فایل رزومه * فقط pdf * </label> <input type="file" accept=".pdf,.doc" id="resume" name="resume">
+                </span>
+            </div>
+            <div class="col-3 col-md-3"></div>
+
             <div class="col-12">
-                <input  class="userformIn" type="submit" value="Send" class="wpcf7-form-control wpcf7-submit" id="input-submit"><span class="ajax-loader"></span>
+                <input type="submit" value="Send" class="wpcf7-form-control wpcf7-submit userformIn" id="input-submit"><span class="ajax-loader"></span>
             </div>
         </div>
         <div class="wpcf7-response-output wpcf7-display-none"></div>
