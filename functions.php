@@ -228,3 +228,5 @@ function action_woocommerce_account_content(  ) {
 
     echo '<p>' . __("This is an addition…", "woocommerce") . '</p>';
 };
+
+
