@@ -1,0 +1,152 @@
+.userIform {
+    width: 80%;
+    margin: 10px auto;
+    background-color: gainsboro;
+    direction: rtl;
+
+}
+.infoForm{
+    width: 100%;
+    background-color: gainsboro;
+}
+.userformIn{
+    direction: rtl;
+    text-align: right;
+}
+
+
+label.userformIn {
+    position: relative;
+    color: #646464;
+}
+
+input.userformIn:not([type=submit]):not([type=checkbox]),
+textarea.userformIn {
+    resize: none;
+    padding: 0.3rem 0.8rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    color: #646464;
+    border: 1px solid gainsboro;
+    background-color: gainsboro;
+    transition: all 0.3s ease;
+    box-shadow: 5px 5px 8px rgba(165, 165, 165, 0), -5px -5px 8px rgba(235, 235, 235, 0), inset 5px 5px 8px rgba(165, 165, 165, 0.8), inset -5px -5px 8px rgba(235, 235, 235, 0.8);
+}
+input.userformIn:not([type=submit]):not([type=checkbox]):valid,
+textarea.userformIn:valid {
+    color: #00c869;
+    text-shadow: 0 0 2px #00dc69;
+}
+input.userformIn:not([type=submit]):not([type=checkbox]):invalid,
+textarea.userformIn:invalid {
+    color: #fe5567;
+    text-shadow: 0 0 2px #fe5567;
+}
+input.userformIn:not([type=submit]):not([type=checkbox])::placeholder,
+textarea.userformIn::placeholder {
+    color: #646464;
+    text-shadow: none;
+    transition: all 0.3s ease;
+    transition-delay: 0.2s;
+}
+input.userformIn:not([type=submit]):not([type=checkbox]):focus,
+textarea.userformIn:focus {
+    caret-color: #646464;
+    color: #646464;
+    text-shadow: 0 0 2px #bebebe;
+    outline: none;
+}
+input.userformIn:not([type=submit]):not([type=checkbox]):focus::placeholder,
+textarea.userformIn:focus::placeholder {
+    color: #646464;
+}
+
+input.userformIn:not([type=submit]):not([type=checkbox]) {
+    border-radius: 10rem;
+    background: transparent;
+}
+
+input.userformIn[type=checkbox] {
+    opacity: 0;
+    display: inline-block;
+    margin-left: 9px;
+    margin-right: 0.6rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+textarea.userformIn {
+    margin-top: 1rem;
+    border-radius: 0.8rem;
+    min-height: 90px;
+}
+
+span.checkbox-custom-outer {
+    position: absolute;
+    top: 10px;
+    right: 3px;
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    border-radius: 10rem;
+    background-color: gainsboro;
+    opacity: 1;
+    transition: all 0.3s ease;
+    z-index: 100;
+    box-shadow: 5px 5px 8px #b9b9b9, -5px -5px 8px #ebebeb;
+}
+span.checkbox-custom-outer::after {
+    position: absolute;
+    content: "";
+    left: 7px;
+    top: 7px;
+    width: 10px;
+    height: 10px;
+    opacity: 1;
+    background: #bebebe;
+    border: solid #bebebe;
+    border-width: 3px;
+    border-radius: 10rem;
+    filter: blur(0);
+    transition: all 0.3s ease;
+    transition-delay: 0.1s;
+}
+
+label.userformIn input.userformIn:checked ~ .checkbox-custom-outer {
+    box-shadow: 5px 5px 8px rgba(165, 165, 165, 0), -5px -5px 8px rgba(235, 235, 235, 0), inset 5px 5px 8px rgba(165, 165, 165, 0.8), inset -5px -5px 8px rgba(235, 235, 235, 0.8);
+}
+label.userformIn input.userformIn:checked ~ .checkbox-custom-outer::after {
+    opacity: 1;
+    background: #00dc69;
+    border-color: #00dc69;
+    filter: blur(1px);
+}
+
+input.userformIn[type=submit] {
+    width: 100%;
+    margin: auto;
+    padding: 1rem;
+    border: none;
+    border-radius: 10rem;
+    background: gainsboro;
+    color: #646464;
+    transition: all 0.3s ease;
+    box-shadow: 5px 5px 8px #b9b9b9, -5px -5px 8px #ebebeb;
+}
+input.userformIn[type=submit]:hover {
+    background: #ebebeb;
+}
+input.userformIn[type=submit]:focus {
+    outline: none;
+    background: gainsboro;
+    color: #00dc69;
+    text-shadow: 0 0 2px #00dc69;
+    box-shadow: 5px 5px 8px rgba(165, 165, 165, 0), -5px -5px 8px rgba(235, 235, 235, 0), inset 5px 5px 8px rgba(165, 165, 165, 0.8), inset -5px -5px 8px rgba(235, 235, 235, 0.8);
+}
+
+@media (max-width: 767px) {
+    userformIn {
+        width: 100%;
+        margin: 4rem;
+    }
+}
