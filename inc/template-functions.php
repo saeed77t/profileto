@@ -67,3 +67,58 @@ function profiletoLoadStyle()
 
 add_action('wp_enqueue_scripts', 'profiletoLoadStyle');
 
+function profiletoSaveImage($userId , $Image  , $metakey){
+    $target_dir = wp_upload_dir();
+
+    $target_file = $target_dir['path'].DIRECTORY_SEPARATOR.basename($Image["name"]);
+    $uploadOk = 1;
+    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
+// Check if image file is a actual image or fake image
+
+    $check = getimagesize($Image["tmp_name"]);
+    if($check !== false) {
+
+        $uploadOk = 1;
+    } else {
+        echo "فایل عکس نیست.";
+        $uploadOk = 0;
+    }
+
+
+// Check if file already exists
+    if (file_exists($target_file)) {
+        echo "فایل وجود دارد";
+        $uploadOk = 0;
+    }
+
+// Check file size
+    if ($Image["size"] > 900000) {
+        echo "خجم فایل عکس زیاد است";
+        $uploadOk = 0;
+    }
+
+// Allow certain file formats
+    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+        && $imageFileType != "gif" ) {
+        echo "فقط فرمت های عکس پشتیبانی میشوند";
+        $uploadOk = 0;
+    }
+
+// Check if $uploadOk is set to 0 by an error
+    if ($uploadOk == 0) {
+        echo "متاسفیم فایل آپلود نشد";
+// if everything is ok, try to upload file
+    } else {
+        if (move_uploaded_file($Image["tmp_name"], $target_file)) {
+
+            // echo "The file ". htmlspecialchars( basename( $Image["name"])). " has been uploaded.";
+        } else {
+            echo "مشکلی در هنگام آپلود فایل پیش آمده است";
+        }
+    }
+
+    $file_url = $target_dir['url'].'/'.basename($Image["name"]) ;
+    update_user_meta($userId, $metakey, $file_url);
+}
+add_action('wp_save_image_file','profiletoSaveImage');

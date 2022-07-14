@@ -27,6 +27,10 @@ $allowed_html = array(
         'href' => array(),
     ),
 );
+
+
+
+  require get_template_directory() . '/inc/userform-action.php';
 ?>
 
 <p>
@@ -40,6 +44,20 @@ $allowed_html = array(
     ?>
 </p>
 
+<?php
+$CuserID = get_current_user_id();
+$UserData =  get_userdata($CuserID);
+
+
+
+?>
+<pre>
+    <?php
+  //  var_dump($UserData);
+    $userurl = $UserData ->user_url;
+
+    ?>
+</pre>
 
 <div class="infoForm">
 <div class="rico-credits">
@@ -48,10 +66,10 @@ $allowed_html = array(
 
 <div role="form" class="wpcf7 userIform" id="wpcf7-f11-p126-o1" lang="en-US" dir="ltr">
     <div class="screen-reader-response"></div>
-    <form action="<?php  echo PROFILETO_THEME_URI.DIRECTORY_SEPARATOR.'inc'.DIRECTORY_SEPARATOR.'userform-action.php'?>" method="post">
+    <form method="post"  enctype="multipart/form-data">
         <div style="display: none;">
 <!--            <input class="userformIn" type="hidden" name="_wpcf7" value="11">-->
-            <input class="userformIn" type="hidden" name="ID" value="<?php echo get_current_user_id(); ?>">
+            <input class="userformIn" type="hidden" name="ID" value="<?php echo $CuserID;  ?>">
 <!--            <input class="userformIn" type="hidden" name="_wpcf7_version" value="5.1.6">-->
 <!--            <input class="userformIn" type="hidden" name="_wpcf7_locale" value="en_US">-->
 <!--            <input  class="userformIn"type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f11-p126-o1">-->
@@ -59,7 +77,7 @@ $allowed_html = array(
         </div>
         <div class="row form-contact-us">
             <div class="col-12 col-md-6">
-                <span class="userformIn"><input class="userformIn" type="text" name="first-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" id="input-name-first" aria-required="true" aria-invalid="false" placeholder="نام" pattern="\S+.*"></span>
+                <span class="userformIn"><input class="userformIn" type="text" name="first-name" value="salam" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" id="input-name-first" aria-required="true" aria-invalid="false" placeholder="نام" pattern="\S+.*"></span>
             </div>
             <div class="col-12 col-md-6">
                 <span class="wpcf7-form-control-wrap last-name"><input  class="userformIn"type="text" name="last-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" id="input-name-last" aria-required="true" aria-invalid="false" placeholder="نام خانوادگی" pattern="\S+.*"></span>
