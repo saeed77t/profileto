@@ -31,6 +31,7 @@ $allowed_html = array(
 
 
   require get_template_directory() . '/inc/userform-action.php';
+
 ?>
 
 <p>
@@ -45,9 +46,33 @@ $allowed_html = array(
 </p>
 
 <?php
+//get user id
 $CuserID = get_current_user_id();
 $UserData =  get_userdata($CuserID);
 
+//get user meta data
+$cuserFirstname= get_user_meta(  $CuserID,   'userFirstname' );
+$cuserLastname= get_user_meta(  $CuserID,   'userLastname' );
+$cuserEmail= get_user_meta(  $CuserID,   'userEmail' );
+$cuserPhoneNumber= get_user_meta(  $CuserID,   'userPhoneNumber' );
+$cuserOccupation= get_user_meta(  $CuserID,   'userOccupation' );
+$cuserAge= get_user_meta(  $CuserID,   'userAge' );
+$cuserAdress= get_user_meta(  $CuserID,   'userAdress' );
+$cuserAbout= get_user_meta(  $CuserID,   'userAbout' );
+$cuserImage= get_user_meta(  $CuserID,   'userImage' );
+$cuserSocialLink1= get_user_meta(  $CuserID,   'userSocialLink1' );
+$cuserSocialLink2= get_user_meta(  $CuserID,   'userSocialLink2' );
+$cuserSocialLink3= get_user_meta(  $CuserID,   'userSocialLink3' );
+$cuserSocialLink4= get_user_meta(  $CuserID,   'userSocialLink4' );
+$cuserSocialLink5= get_user_meta(  $CuserID,   'userSocialLink5' );
+$cuserSocialLink6= get_user_meta(  $CuserID,   'userSocialLink6' );
+$cuserSocialImage1= get_user_meta(  $CuserID,   'userSocialImage1' );
+$cuserSocialImage2= get_user_meta(  $CuserID,   'userSocialImage2' );
+$cuserSocialImage3= get_user_meta(  $CuserID,   'userSocialImage3' );
+$cuserSocialImage4= get_user_meta(  $CuserID,   'userSocialImage4' );
+$cuserSocialImage5= get_user_meta(  $CuserID,   'userSocialImage5' );
+$cuserSocialImage6= get_user_meta(  $CuserID,   'userSocialImage6' );
+$cuserResume= get_user_meta(  $CuserID,   'userResume' );
 
 
 ?>
@@ -69,7 +94,7 @@ $UserData =  get_userdata($CuserID);
     <form method="post"  enctype="multipart/form-data">
         <div style="display: none;">
 <!--            <input class="userformIn" type="hidden" name="_wpcf7" value="11">-->
-            <input class="userformIn" type="hidden" name="ID" value="<?php echo $CuserID;  ?>">
+            <input class="userformIn" id="userIdInput" type="hidden" name="ID" value="<?php echo $CuserID;  ?>">
 <!--            <input class="userformIn" type="hidden" name="_wpcf7_version" value="5.1.6">-->
 <!--            <input class="userformIn" type="hidden" name="_wpcf7_locale" value="en_US">-->
 <!--            <input  class="userformIn"type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f11-p126-o1">-->
@@ -77,29 +102,63 @@ $UserData =  get_userdata($CuserID);
         </div>
         <div class="row form-contact-us">
             <div class="col-12 col-md-6">
-                <span class="userformIn"><input class="userformIn" type="text" name="first-name" value="salam" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" id="input-name-first" aria-required="true" aria-invalid="false" placeholder="نام" pattern="\S+.*"></span>
+                <span class="userformIn"><input class="userformIn" type="text" name="first-name" value="<?php
+                    if (isset($cuserFirstname[0]) && !empty($cuserFirstname[0])){
+                        echo $cuserFirstname[0];
+                    }
+                    ?>" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" id="input-name-first" aria-required="true" aria-invalid="false" placeholder="نام" pattern="\S+.*"></span>
             </div>
             <div class="col-12 col-md-6">
-                <span class="wpcf7-form-control-wrap last-name"><input  class="userformIn"type="text" name="last-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" id="input-name-last" aria-required="true" aria-invalid="false" placeholder="نام خانوادگی" pattern="\S+.*"></span>
+                <span class="wpcf7-form-control-wrap last-name"><input  class="userformIn"type="text" name="last-name" value="<?php
+                    if (isset($cuserLastname[0]) && !empty($cuserLastname[0])){
+                        echo $cuserLastname[0];
+                    }
+                    ?>" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" id="input-name-last" aria-required="true" aria-invalid="false" placeholder="نام خانوادگی" pattern="\S+.*"></span>
             </div>
             <div class="col-12 col-md-6">
-                <span class="wpcf7-form-control-wrap user-phone"><input  class="userformIn" type="tel" name="user-phone" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required wpcf7-validates-as-tel" id="input-phone" aria-required="true" aria-invalid="false" placeholder="شماره تلفن" pattern="[0-9]{4}[0-9]{3}[0-9]{2}[0-9]{2}"></span>
+                <span class="wpcf7-form-control-wrap user-phone"><input  class="userformIn" type="tel" name="user-phone" value="<?php
+                    if (isset($cuserPhoneNumber[0]) && !empty($cuserPhoneNumber[0])){
+                        echo $cuserPhoneNumber[0];
+                    }
+                    ?>" size="40" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required wpcf7-validates-as-tel" id="input-phone" aria-required="true" aria-invalid="false" placeholder="شماره تلفن" pattern="[0-9]{4}[0-9]{3}[0-9]{2}[0-9]{2}"></span>
             </div>
             <div class="col-12 col-md-6">
-                <span class="wpcf7-form-control-wrap user-email"><input class="userformIn" type="email" name="user-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" id="input-email" aria-required="true" aria-invalid="false" placeholder="آدرس ایمیل" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$"></span>
+                <span class="wpcf7-form-control-wrap user-email"><input class="userformIn" type="email" name="user-email" value="<?php
+                    if (isset($cuserEmail[0]) && !empty($cuserEmail[0])){
+                        echo $cuserEmail[0];
+                    }
+                    ?>" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" id="input-email" aria-required="true" aria-invalid="false" placeholder="آدرس ایمیل" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$"></span>
             </div>
             <div class="col-12 col-md-6">
-                <span class="userformIn"><input class="userformIn" type="text" name="occupation" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" id="input-ocupation" aria-required="true" aria-invalid="false" placeholder="شغل" pattern="\S+.*"></span>
+                <span class="userformIn"><input class="userformIn" type="text" name="occupation" value="<?php
+                    if (isset($cuserOccupation[0]) && !empty($cuserOccupation[0])){
+                        echo $cuserOccupation[0];
+                    }
+                    ?>" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" id="input-ocupation" aria-required="true" aria-invalid="false" placeholder="شغل" pattern="\S+.*"></span>
             </div>
             <div class="col-12 col-md-6">
-                <span class=""><input  class="userformIn"type="number" name="age" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" id="input-age" aria-required="true" aria-invalid="false" placeholder="سن" pattern="[0-9]{3}"></span>
+                <span class=""><input  class="userformIn"type="number" name="age" value="<?php
+                    if (isset($cuserAge[0]) && !empty($cuserAge[0])){
+                        echo $cuserAge[0];
+                    }
+                    ?>" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" id="input-age" aria-required="true" aria-invalid="false" placeholder="سن" pattern="[0-9]{3}"></span>
             </div>
             <div class="col-12 col-md-12">
-                <span class=""><input  class="userformIn"type="text" name="address" value="" size="312" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" id="input-age" aria-required="true" aria-invalid="false" placeholder="آدرس" pattern="\S+.*"></span>
+                <span class=""><input  class="userformIn"type="text" name="address" value="<?php
+                    if (isset($cuserAdress[0]) && !empty($cuserAdress[0])){
+                        echo $cuserAdress[0];
+                    }
+                    ?>" size="312" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" id="input-age" aria-required="true" aria-invalid="false" placeholder="آدرس" pattern="\S+.*"></span>
             </div>
             <div class="col-1"></div>
             <div class="col-10">
-                <span class="wpcf7-form-control-wrap additional-comments"><textarea  class="userformIn" name="about" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" id="input-comments" aria-invalid="false" placeholder="   درباره من ..... "></textarea></span>
+                <span class="wpcf7-form-control-wrap additional-comments"><textarea  class="userformIn"   name="about" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" id="input-comments" aria-invalid="false" placeholder="   درباره من ..... ">
+                        <?php
+                        if (isset($cuserAbout[0]) && !empty($cuserAbout[0])){
+                            echo $cuserAbout[0];
+                        }
+                        ?>
+                    </textarea></span>
             </div>
             <div class="col-1"></div>
 <!--            <div class="col-12">-->
@@ -161,7 +220,23 @@ $UserData =  get_userdata($CuserID);
 <!--            </div>-->
             <div class="col-4 col-md-4"></div>
             <div class="col-4 col-md-4">
-                <span class="added">  <label class="userformIn" for="input-image">عکس یا لوگو</label>  <input  class="" type="file"   accept="image/png, image/jpeg" name="image" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" id="input-image" aria-required="true" aria-invalid="false" placeholder="عکس یا لوگو" alt="عکس یا لوگو"></span>
+                <span class="added">
+                    <?php
+                    if (isset($cuserImage[0]) && !empty($cuserImage[0])){
+                        ?>
+                        <img src="<?php  echo $cuserImage[0]?>" alt="" style="width: 100px;">
+                        <br>
+                        <button class="btnAjax" name="imageDelete" value="<?php echo $cuserImage[0]  ?>">Delete</button>
+                    <?php
+
+                    }
+                    else{
+                       ?>
+                        <label class="userformIn" for="input-image">عکس یا لوگو</label>  <input  class="" type="file"   accept="image/png, image/jpeg" name="image" value="c:/passwords.txt" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" id="input-image" aria-required="true" aria-invalid="false" placeholder="عکس یا لوگو" alt="عکس یا لوگو"></span>
+                <?php
+                    }
+                    ?>
+
             </div>
             <div class="col-4 col-md-4"></div>
             <div class="col-4 col-md-4" >
