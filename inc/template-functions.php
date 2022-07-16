@@ -47,6 +47,11 @@ add_action('wp_head', 'profileto_pingback_header');
 function profiletoLoadScripts()
 {
     wp_enqueue_script('profileto-main', PROFILETO_THEME_URI . '/js/main.js', [], PROFILETO_THEME_VERSION, true);
+    wp_localize_script('profileto-main', 'postdata', array(
+        'ajaxurl' => admin_url( "admin-ajax.php" ),
+        'homeurl' => PROFILETO_THEME_URI,
+        'nonce'   => wp_create_nonce( 'ajax-nonce' )
+    ));
 }
 add_action('wp_enqueue_scripts', 'profiletoLoadScripts');
 
@@ -70,7 +75,7 @@ add_action('wp_enqueue_scripts', 'profiletoLoadStyle');
 function profiletoSaveImage($userId , $Image  , $metakey){
     $target_dir = wp_upload_dir();
 
-    $target_file = $target_dir['path'].DIRECTORY_SEPARATOR.basename($Image["name"]);
+    $target_file = $target_dir['path'].DIRECTORY_SEPARATOR.$userId.basename($Image["name"]);
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
@@ -93,7 +98,7 @@ function profiletoSaveImage($userId , $Image  , $metakey){
     }
 
 // Check file size
-    if ($Image["size"] > 900000) {
+    if ($Image["size"] > 1000000) {
         echo "خجم فایل عکس زیاد است";
         $uploadOk = 0;
     }
@@ -112,13 +117,13 @@ function profiletoSaveImage($userId , $Image  , $metakey){
     } else {
         if (move_uploaded_file($Image["tmp_name"], $target_file)) {
 
-            // echo "The file ". htmlspecialchars( basename( $Image["name"])). " has been uploaded.";
+            //echo "The file ". htmlspecialchars( basename( $Image["name"])). " has been uploaded.";
         } else {
             echo "مشکلی در هنگام آپلود فایل پیش آمده است";
         }
     }
 
-    $file_url = $target_dir['url'].'/'.basename($Image["name"]) ;
+    $file_url = $target_dir['url'].'/'.$userId.basename($Image["name"]) ;
     update_user_meta($userId, $metakey, $file_url);
 }
 add_action('wp_save_image_file','profiletoSaveImage');

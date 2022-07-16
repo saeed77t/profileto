@@ -170,3 +170,11 @@ input.userformIn[type=submit]:focus {
         margin: 4rem;
     }
 }
+
+.hide {
+    display: none;
+}
+
+.show{
+    display: block;
+}

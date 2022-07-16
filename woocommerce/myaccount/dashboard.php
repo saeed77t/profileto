@@ -75,6 +75,10 @@ $cuserSocialImage6= get_user_meta(  $CuserID,   'userSocialImage6' );
 $cuserResume= get_user_meta(  $CuserID,   'userResume' );
 
 
+
+
+
+
 ?>
 <pre>
     <?php
@@ -221,22 +225,21 @@ $cuserResume= get_user_meta(  $CuserID,   'userResume' );
             <div class="col-4 col-md-4"></div>
             <div class="col-4 col-md-4">
                 <span class="added">
-                    <?php
-                    if (isset($cuserImage[0]) && !empty($cuserImage[0])){
-                        ?>
-                        <img src="<?php  echo $cuserImage[0]?>" alt="" style="width: 100px;">
+
+
+                            <div class="  <?php if (isset($cuserImage[0]) &&strlen($cuserImage[0]) > 5  && !empty($cuserImage[0])){ echo 'show';} else{echo 'hide';}?>">
+                        <img src="<?php  echo $cuserImage[0]?>" alt="user image" style="width: 100px;">
+                                  <button type="button" class="btnAjax" name="userImage"  value="<?php echo $cuserImage[0]  ?>">Delete</button>
                         <br>
-                        <button class="btnAjax" name="imageDelete" value="<?php echo $cuserImage[0]  ?>">Delete</button>
-                    <?php
 
-                    }
-                    else{
-                       ?>
-                        <label class="userformIn" for="input-image">عکس یا لوگو</label>  <input  class="" type="file"   accept="image/png, image/jpeg" name="image" value="c:/passwords.txt" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" id="input-image" aria-required="true" aria-invalid="false" placeholder="عکس یا لوگو" alt="عکس یا لوگو"></span>
-                <?php
-                    }
-                    ?>
+                                </div>
+                        <div class=" <?php if (strlen($cuserImage[0]) >5  ){ echo 'hide';}?>">
+                        <label class="userformIn" for="input-image">عکس یا لوگو</label>  <input  class="" type="file"   accept="image/png, image/jpeg" name="image" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" id="input-image" aria-required="true" aria-invalid="false" placeholder="عکس یا لوگو" alt="عکس یا لوگو">
+                            </div>
 
+<!--                        <label class="userformIn" for="input-image">عکس یا لوگو</label>  <input  class="" type="file"   accept="image/png, image/jpeg" name="image" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" id="input-image" aria-required="true" aria-invalid="false" placeholder="عکس یا لوگو" alt="عکس یا لوگو">-->
+
+                </span>
             </div>
             <div class="col-4 col-md-4"></div>
             <div class="col-4 col-md-4" >
