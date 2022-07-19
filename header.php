@@ -10,52 +10,137 @@
  */
 
 ?>
+
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="profile" href="https://gmpg.org/xfn/11">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-	<?php wp_head(); ?>
+    <meta charset="<?php bloginfo('charset'); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="profile" href="https://gmpg.org/xfn/11">
+
+    <link rel="stylesheet" href="<?php echo PROFILETO_THEME_URI ;?>/assets/font-awesome/css/font-awesome.min.css">
+
+    <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
 
 <?php wp_body_open(); ?>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'profileto' ); ?></a>
 
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$profileto_description = get_bloginfo( 'description', 'display' );
-			if ( $profileto_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $profileto_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'profileto' ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</nav>
-	</header>
+    <header id="masthead" class="site-header">
+        <div class="top">
+            <div class="container">
+                <div class="row preeheader">
+                    <?php $headerPhone = get_field('phone','option');
+                    $headerfacebook = get_field('facebook','option');
+                    $headertwitter = get_field('twitter','option');
+                    $headerlinkedin= get_field('linkedin','option');
+                    $headerpinterest= get_field('pinterest','option');
+                    $headergooglepluse= get_field('googlepluse','option');
+                    $headerdribble= get_field('dribble','option');
+
+                    ?>
+                    <div class="span6">
+                        <?php   if ($headerPhone): ?>
+                            <p class="topcontact"><i class="icon-phone"></i> <?php echo $headerPhone?></p>
+                        <?php endif; ?>
+
+                    </div>
+                    <div class="span6">
+
+                        <ul class="social-network">
+
+                            <?php   if ($headerfacebook): ?>
+                                <li><a href="<?php echo $headerfacebook?>" data-placement="bottom" title="Facebook"><i class="icon-facebook icon-white"></i></a></li>
+                            <?php endif; ?>
+
+                            <?php   if ($headertwitter): ?>
+                                <li><a href="<?php echo $headertwitter?>" data-placement="bottom" title="Twitter"><i class="icon-twitter icon-white"></i></a></li>
+                            <?php endif; ?>
+
+                            <?php   if ($headerlinkedin): ?>
+                                <li><a href="<?php echo $headerlinkedin?>" data-placement="bottom" title="Linkedin"><i class="icon-linkedin icon-white"></i></a></li>
+                            <?php endif; ?>
+
+                            <?php   if ($headerpinterest): ?>
+                                <li><a href="<?php echo $headerpinterest?>" data-placement="bottom" title="Pinterest"><i class="icon-pinterest  icon-white"></i></a></li>
+                            <?php endif; ?>
+                            <?php   if ($headergooglepluse): ?>
+                                <li><a href="<?php echo $headergooglepluse?>" data-placement="bottom" title="Google +"><i class="icon-google-plus icon-white"></i></a></li>
+                            <?php endif; ?>
+
+                            <?php   if ($headerdribble): ?>
+                                <li><a href="<?php echo $headerdribble?>" data-placement="bottom" title="Dribbble"><i class="icon-dribbble icon-white"></i></a></li>
+                            <?php endif; ?>
+
+
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+
+
+            <div class="row nomargin">
+                <div class="span4">
+                    <div class="logo">
+                        <?php $HeaderLogo = get_field('logo_header','option');
+                        $BachgroundHeaderLogo = get_field('logo-background','option');
+                        if ($HeaderLogo) :
+                            ?>
+                            <a href="index.html"><img src="<?php echo $HeaderLogo ;?>" alt="" style="background-color: <?php echo $BachgroundHeaderLogo; ?> " /></a>
+                        <?php else:?>
+                            <a href=""><img src="" alt="" /></a>
+                        <?php endif;?>
+                    </div>
+                </div>
+                <div class="span8">
+                    <div class="navbar navbar-static-top">
+                        <div class="navigation">
+                            <nav>
+
+
+                            <?php
+
+                            wp_nav_menu(
+                                array(
+                                    'theme_location' => 'menu-1',
+                                    'menu_id'        => 'primary-menu',
+                                    'container'            => '',
+                                    'container_class'      => 'nav topnav',
+                                    'container_id'         => '',
+                                    'container_aria_label' => '',
+                                    'menu_class'           => 'nav topnav',
+                                    'echo'                 => true,
+                                    'fallback_cb'          => 'wp_page_menu',
+                                    'before'               => '',
+                                    'after'                => '',
+                                    'link_before'          => '',
+                                    'link_after'           => '',
+                                    'item_spacing'         => 'preserve',
+                                    'depth'                => 0,
+                                    'walker'               => '',
+                                )
+                            )
+                            ?>
+                            </nav>
+                        </div>
+                        <!-- end navigation -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    <?php
+
+           ?>
+
+    </header>

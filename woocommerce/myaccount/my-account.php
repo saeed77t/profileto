@@ -1,4 +1,9 @@
+<style>
 
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="<?php echo PROFILETO_THEME_URI ;?>/assets/font-awesome/css/font-awesome.min.css">
 <?php
 /**
  * My Account page
@@ -23,7 +28,10 @@ defined('ABSPATH') || exit;
  *
  * @since 2.6.0
  */
-do_action('woocommerce_account_navigation'); ?>
+
+
+?>
+
 
 <div class="woocommerce-MyAccount-content">
     <?php
@@ -35,5 +43,9 @@ do_action('woocommerce_account_navigation'); ?>
     do_action('woocommerce_account_content');
     ?>
 </div>
+
+<?php
+
+?>
 
 

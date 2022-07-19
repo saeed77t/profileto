@@ -1,9 +1,9 @@
-<pre>
+
 <?php
 
 
 if (isset($_POST) && !empty($_POST) && isset($_POST['ID']) && !empty($_POST['ID'])):
-    // var_dump($_POST);
+
 
 
     $userId = $_POST['ID'];
@@ -151,14 +151,14 @@ if (isset($_POST) && !empty($_POST) && isset($_POST['ID']) && !empty($_POST['ID'
         }
 
 // Check file size
-        if ($userResume["size"] > 20000000) {
-            echo "خجم فایل عکس زیاد است";
+        if ($userResume["size"] > 2000000000) {
+            echo "خجم فایل  زیاد است ";
             $uploadOk = 0;
         }
 
 // Check if $uploadOk is set to 0 by an error
         if ($uploadOk == 0) {
-            echo "متاسفیم فایل آپلود نشد";
+            echo "متاسفیم فایل آپلود نشد ";
 // if everything is ok, try to upload file
         } else {
             if (move_uploaded_file($userResume["tmp_name"], $target_file)) {
@@ -178,6 +178,3 @@ if (isset($_POST) && !empty($_POST) && isset($_POST['ID']) && !empty($_POST['ID'
 endif;
 
 ?>
-
-
-    </pre>

@@ -29,6 +29,7 @@
 
         let id = $("#userIdInput").val();
         let url = $(this).val();
+        let linkkey = $(this).attr("textkey");
         let key = $(this).attr("name");
         let beforeajax = $(this).parent();
         let afterajax = $(this).parent().next();
@@ -40,6 +41,7 @@
                     'id': id,
                     'key': key,
                     'url': url,
+                    'linkkey':linkkey,
                     'nonce': postdata.nonce
                 },
 
@@ -55,6 +57,9 @@
         );
 
     });
+
+   $('li.menu-item-has-children').addClass('dropdown ');
+   $('ul.sub-menu').addClass('dropdown-menu');
 
 
 })(jQuery);

@@ -80,14 +80,14 @@ $cuserResume= get_user_meta(  $CuserID,   'userResume' );
 
 
 ?>
-<pre>
+
     <?php
-  //  var_dump($UserData);
+
     $userurl = $UserData ->user_url;
 
     ?>
-</pre>
 
+<button class="btn btn-lg btn-info"><a style="text-decoration: none; color: white;"  href="<?php echo 'profile'.DIRECTORY_SEPARATOR.'?userid='.$CuserID?>">  مشاهده صفحه پروفایل</a></button>
 <div class="infoForm">
 <div class="rico-credits">
     <h2 class="text-center mb-3">فرم نمایش اطالاعات </h2>
@@ -228,8 +228,8 @@ $cuserResume= get_user_meta(  $CuserID,   'userResume' );
 
 
                             <div class="  <?php if (isset($cuserImage[0]) &&strlen($cuserImage[0]) > 5  && !empty($cuserImage[0])){ echo 'show';} else{echo 'hide';}?>">
-                        <img src="<?php  echo $cuserImage[0]?>" alt="user image" style="width: 100px;">
-                                  <button type="button" class="btnAjax" name="userImage"  value="<?php echo $cuserImage[0]  ?>">Delete</button>
+                        <img src="<?php  echo $cuserImage[0];?>" alt="user image" style="width: 100px;">
+                                  <button type="button" class="btnAjax btn btn-danger" name="userImage"  value="<?php echo $cuserImage[0] ; ?>"><i class="fa      icon  icon-trash" aria-hidden="true"></i></button>
                         <br>
 
                                 </div>
@@ -244,46 +244,105 @@ $cuserResume= get_user_meta(  $CuserID,   'userResume' );
             <div class="col-4 col-md-4"></div>
             <div class="col-4 col-md-4" >
                 <span class="added">
+                    <div class="  <?php if (isset($cuserSocialImage1[0]) && strlen($cuserSocialImage1[0]) > 5  && !empty($cuserSocialImage1[0])){ echo 'show';} else{echo 'hide';}?>">
+                        <img src="<?php  echo $cuserSocialImage1[0];?>" alt="user image" style="width: 100px;">
+                        <p><?php echo $cuserSocialLink1[0] ;?></p>
+                                  <button type="button" class="btnAjax btn btn-danger" name="userSocialImage1" textkey="userSocialLink1"  value="<?php echo $cuserSocialImage1[0] ; ?>"><i class="fa     icon  icon-trash" aria-hidden="true"></i></button>
+
+                    </div>
+                    <div class=" <?php if (strlen($cuserSocialImage1[0]) >5  ){ echo 'hide';}?>">
                     <input type="text" id="socialLink1" class="userformIn" name="socialLink1" value="" placeholder="لینک شبکه اجتماعی">
                    <label class="userformIn" for="socialimage1">انتخاب لوگوی شبکه اجتماعی</label> <input type="file"  accept="image/png, image/jpeg" id="socialimage1" name="socialimage1">
+                </div>
                 </span>
             </div>
             <div class="col-4 col-md-4" >
                 <span class="added">
+                    <div class="  <?php if (isset($cuserSocialImage2[0]) && strlen($cuserSocialImage2[0]) > 5  && !empty($cuserSocialImage2[0])){ echo 'show';} else{echo 'hide';}?>">
+                        <img src="<?php  echo $cuserSocialImage2[0];?>" alt="user image" style="width: 100px;">
+                        <p><?php echo $cuserSocialLink2[0] ;?></p>
+                                  <button type="button" class="btnAjax btn btn-danger" name="userSocialImage2" textkey="userSocialLink2"  value="<?php echo $cuserSocialImage2[0] ; ?>"><i class="fa      icon  icon-trash" aria-hidden="true"></i></button>
+
+                    </div>
+                    <div class=" <?php if (strlen($cuserSocialImage2[0]) >5  ){ echo 'hide';}?>">
                     <input type="text" id="socialLink2" class="userformIn" name="socialLink2" value="" placeholder="لینک شبکه اجتماعی">
                    <label class="userformIn" for="socialimage2">انتخاب لوگوی شبکه اجتماعی</label> <input type="file"  accept="image/png, image/jpeg" id="socialimage2" name="socialimage2">
+                    </div>
                 </span>
             </div>
             <div class="col-4 col-md-4" >
                 <span class="added">
+                    <div class="  <?php if (isset($cuserSocialImage3[0]) && strlen($cuserSocialImage3[0]) > 5  && !empty($cuserSocialImage3[0])){ echo 'show';} else{echo 'hide';}?>">
+                        <img src="<?php  echo $cuserSocialImage3[0];?>" alt="user image" style="width: 100px;">
+                        <p><?php echo $cuserSocialLink3[0] ;?></p>
+                                  <button type="button" class="btnAjax btn btn-danger" name="userSocialImage3" textkey="userSocialLink3"  value="<?php echo $cuserSocialImage3[0] ; ?>"><i class="fa      icon  icon-trash" aria-hidden="true"></i></button>
+
+                    </div>
+
+                     <div class=" <?php if (strlen($cuserSocialImage3[0]) >5  ){ echo 'hide';}?>">
                     <input type="text" id="socialLink3" class="userformIn" name="socialLink3" value="" placeholder="لینک شبکه اجتماعی">
                    <label class="userformIn" for="socialimage3">انتخاب لوگوی شبکه اجتماعی</label> <input type="file"  accept="image/png, image/jpeg" id="socialimage3" name="socialimage3">
+                     </div>
                 </span>
             </div>
             <div class="col-4 col-md-4" >
                 <span class="added">
+                    <div class="  <?php if (isset($cuserSocialImage4[0]) && strlen($cuserSocialImage4[0]) > 5  && !empty($cuserSocialImage4[0])){ echo 'show';} else{echo 'hide';}?>">
+                        <img src="<?php  echo $cuserSocialImage4[0];?>" alt="user image" style="width: 100px;">
+                        <p><?php echo $cuserSocialLink4[0] ;?></p>
+                                  <button type="button" class="btnAjax btn btn-danger" name="userSocialImage4" textkey="userSocialLink4"  value="<?php echo $cuserSocialImage4[0] ; ?>"><i class="fa      icon  icon-trash" aria-hidden="true"></i></button>
+
+                    </div>
+
+                     <div class=" <?php if (strlen($cuserSocialImage4[0]) >5  ){ echo 'hide';}?>">
                     <input type="text" id="socialLink4" class="userformIn" name="socialLink4" value="" placeholder="لینک شبکه اجتماعی">
                    <label class="userformIn" for="socialimage4">انتخاب لوگوی شبکه اجتماعی</label> <input type="file"  accept="image/png, image/jpeg" id="socialimage4" name="socialimage4">
+                     </div>
                 </span>
             </div>
             <div class="col-4 col-md-4" >
                 <span class="added">
+
+                      <div class="  <?php if (isset($cuserSocialImage5[0]) && strlen($cuserSocialImage5[0]) > 5  && !empty($cuserSocialImage5[0])){ echo 'show';} else{echo 'hide';}?>">
+                        <img src="<?php  echo $cuserSocialImage5[0];?>" alt="user image" style="width: 100px;">
+                        <p><?php echo $cuserSocialLink5[0] ;?></p>
+                                  <button type="button" class="btnAjax btn btn-danger" name="userSocialImage5" textkey="userSocialLink5"  value="<?php echo $cuserSocialImage5[0] ; ?>"><i class="fa      icon  icon-trash" aria-hidden="true"></i></button>
+
+                    </div>
+
+                      <div class=" <?php if (strlen($cuserSocialImage5[0]) >5  ){ echo 'hide';}?>">
                     <input type="text" id="socialLink5" class="userformIn" name="socialLink5" value="" placeholder="لینک شبکه اجتماعی">
                    <label class="userformIn" for="socialimage5">انتخاب لوگوی شبکه اجتماعی</label> <input type="file"  accept="image/png, image/jpeg" id="socialimage5" name="socialimage5">
+                      </div>
                 </span>
             </div>
             <div class="col-4 col-md-4" >
                 <span class="added">
+
+                     <div class="  <?php if (isset($cuserSocialImage6[0]) && strlen($cuserSocialImage6[0]) > 5  && !empty($cuserSocialImage6[0])){ echo 'show';} else{echo 'hide';}?>">
+                        <img src="<?php  echo $cuserSocialImage6[0];?>" alt="user image" style="width: 100px;">
+                        <p><?php echo $cuserSocialLink6[0] ;?></p>
+                                  <button type="button" class="btnAjax btn btn-danger" name="userSocialImage6" textkey="userSocialLink6"  value="<?php echo $cuserSocialImage6[0] ; ?>"><i class="fa    icon  icon-trash" aria-hidden="true"></i></button>
+
+                    </div>
+                      <div class=" <?php if (strlen($cuserSocialImage6[0]) >5  ){ echo 'hide';}?>">
                     <input type="text" id="socialLink6" class="userformIn" name="socialLink6" value="" placeholder="لینک شبکه اجتماعی">
                    <label class="userformIn" for="socialimage6">انتخاب لوگوی شبکه اجتماعی</label> <input type="file"  accept="image/png, image/jpeg" id="socialimage6" name="socialimage6">
+                      </div>
                 </span>
             </div>
 
             <div class="col-3 col-md-3"></div>
             <div class="col-6 col-md-6" >
                 <span class="added">
+                     <div class="  <?php if (isset($cuserResume[0]) && strlen($cuserResume[0]) > 5  && !empty($cuserResume[0])){ echo 'show';} else{echo 'hide';}?>">
+                        <p><?php echo basename($cuserResume[0] , 'pdf'); ?></p>
+                                  <button type="button" class="btnAjax btn btn-danger" name="userResume"   value="<?php echo $cuserResume[0] ; ?>"><i class="fa      icon  icon-trash" aria-hidden="true"></i></button>
 
+                    </div>
+                     <div class=" <?php if (strlen($cuserResume[0]) >5  ){ echo 'hide';}?>">
                    <label class="userformIn" for="resume">فایل رزومه * فقط pdf * </label> <input type="file" accept=".pdf,.doc" id="resume" name="resume">
+                     </div>
                 </span>
             </div>
             <div class="col-3 col-md-3"></div>
