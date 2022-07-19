@@ -1,0 +1,308 @@
+.userIform {
+    width: 80%;
+    margin: 10px auto;
+    background-color: gainsboro;
+    direction: rtl;
+
+}
+
+.infoForm {
+    width: 100%;
+    background-color: gainsboro;
+}
+
+.userformIn {
+    direction: rtl;
+    text-align: right;
+}
+
+
+label.userformIn {
+    position: relative;
+    color: #646464;
+}
+
+input.userformIn:not([type=submit]):not([type=checkbox]),
+textarea.userformIn {
+    resize: none;
+    padding: 0.3rem 0.8rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    color: #646464;
+    border: 1px solid gainsboro;
+    background-color: gainsboro;
+    transition: all 0.3s ease;
+    box-shadow: 5px 5px 8px rgba(165, 165, 165, 0), -5px -5px 8px rgba(235, 235, 235, 0), inset 5px 5px 8px rgba(165, 165, 165, 0.8), inset -5px -5px 8px rgba(235, 235, 235, 0.8);
+}
+
+input.userformIn:not([type=submit]):not([type=checkbox]):valid,
+textarea.userformIn:valid {
+    color: #00c869;
+    text-shadow: 0 0 2px #00dc69;
+}
+
+input.userformIn:not([type=submit]):not([type=checkbox]):invalid,
+textarea.userformIn:invalid {
+    color: #fe5567;
+    text-shadow: 0 0 2px #fe5567;
+}
+
+input.userformIn:not([type=submit]):not([type=checkbox])::placeholder,
+textarea.userformIn::placeholder {
+    color: #646464;
+    text-shadow: none;
+    transition: all 0.3s ease;
+    transition-delay: 0.2s;
+}
+
+input.userformIn:not([type=submit]):not([type=checkbox]):focus,
+textarea.userformIn:focus {
+    caret-color: #646464;
+    color: #646464;
+    text-shadow: 0 0 2px #bebebe;
+    outline: none;
+}
+
+input.userformIn:not([type=submit]):not([type=checkbox]):focus::placeholder,
+textarea.userformIn:focus::placeholder {
+    color: #646464;
+}
+
+input.userformIn:not([type=submit]):not([type=checkbox]) {
+    border-radius: 10rem;
+    background: transparent;
+}
+
+input.userformIn[type=checkbox] {
+    opacity: 0;
+    display: inline-block;
+    margin-left: 9px;
+    margin-right: 0.6rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+textarea.userformIn {
+    margin-top: 1rem;
+    border-radius: 0.8rem;
+    min-height: 90px;
+}
+
+span.checkbox-custom-outer {
+    position: absolute;
+    top: 10px;
+    right: 3px;
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    border-radius: 10rem;
+    background-color: gainsboro;
+    opacity: 1;
+    transition: all 0.3s ease;
+    z-index: 100;
+    box-shadow: 5px 5px 8px #b9b9b9, -5px -5px 8px #ebebeb;
+}
+
+span.checkbox-custom-outer::after {
+    position: absolute;
+    content: "";
+    left: 7px;
+    top: 7px;
+    width: 10px;
+    height: 10px;
+    opacity: 1;
+    background: #bebebe;
+    border: solid #bebebe;
+    border-width: 3px;
+    border-radius: 10rem;
+    filter: blur(0);
+    transition: all 0.3s ease;
+    transition-delay: 0.1s;
+}
+
+label.userformIn input.userformIn:checked ~ .checkbox-custom-outer {
+    box-shadow: 5px 5px 8px rgba(165, 165, 165, 0), -5px -5px 8px rgba(235, 235, 235, 0), inset 5px 5px 8px rgba(165, 165, 165, 0.8), inset -5px -5px 8px rgba(235, 235, 235, 0.8);
+}
+
+label.userformIn input.userformIn:checked ~ .checkbox-custom-outer::after {
+    opacity: 1;
+    background: #00dc69;
+    border-color: #00dc69;
+    filter: blur(1px);
+}
+
+input.userformIn[type=submit] {
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    padding: 1rem;
+    border: none;
+    border-radius: 10rem;
+    background: gainsboro;
+    color: #646464;
+    transition: all 0.3s ease;
+    box-shadow: 5px 5px 8px #b9b9b9, -5px -5px 8px #ebebeb;
+}
+
+input.userformIn[type=submit]:hover {
+    background: #ebebeb;
+}
+
+input.userformIn[type=submit]:focus {
+    outline: none;
+    background: gainsboro;
+    color: #00dc69;
+    text-shadow: 0 0 2px #00dc69;
+    box-shadow: 5px 5px 8px rgba(165, 165, 165, 0), -5px -5px 8px rgba(235, 235, 235, 0), inset 5px 5px 8px rgba(165, 165, 165, 0.8), inset -5px -5px 8px rgba(235, 235, 235, 0.8);
+}
+
+.added {
+    width: 100%;
+    height: 60px;
+    display: inline-table;
+    text-align: center;
+    margin: auto;
+    padding: 1rem;
+    border: none;
+    border-radius: 10rem;
+    background: gainsboro;
+    color: #646464;
+    transition: all 0.3s ease;
+    box-shadow: 5px 5px 8px #b9b9b9, -5px -5px 8px #ebebeb;
+    margin-bottom: 20px;
+
+}
+
+.wpcf7-response-output {
+    border: none;
+}
+
+@media (max-width: 767px) {
+    userformIn {
+        width: 100%;
+        margin: 4rem;
+    }
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+/* my account woc*/
+.col1 {
+
+    width: 42%;
+    margin-right: 6%;
+    float: right;
+    -webkit-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.75);
+    padding: 8px;
+    direction: rtl;
+    text-align: right;
+    border-radius: 10px;
+
+}
+
+.col2 {
+
+    width: 42%;
+    margin-right: 6%;
+    float: right;
+    -webkit-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.75);
+    padding: 8px;
+    direction: rtl;
+    text-align: right;
+    border-radius: 10px;
+}
+.col2 form  , .col1 form {
+
+}
+.colholder{
+    direction: rtl;
+    width: 90%;
+    margin: 20px auto;
+    min-height: 500px;
+}
+.col1 input[type = 'text'], .col1 input[type = 'email'] , .col2 input[type = 'text'], .col2 input[type = 'email']  {
+    width: 95%;
+    height: 48px;
+    margin: 2px auto;
+    background-color: #EDF0F2;
+    border-radius: 10px;
+}
+.col1 input[type = 'password'], .col2 input[type = 'password']{
+    width: 95%;
+    display: block;
+    height: 48px;
+    margin: 2px auto;
+    background-color: #EDF0F2;
+    border-radius: 10px;
+}
+.password-input{
+    width: 100%;
+    display: block;
+    padding: 5px !important;
+}
+.colholder .woocommerce-Button , .colholder .woocommerce-button{
+    background-color: #E14D43;
+    color: white;
+    width: 100px;
+    height: 45px;
+    font-size: 16px;
+    margin: 10px;
+}
+
+.top .span8 {
+
+}
+.top .span4 {
+
+}
+@media (min-width:  979px) {
+    .nomargin{
+        min-width: 1200px;
+    }
+    .preeheader{
+        min-width: 1200px;
+        direction:ltr;
+    }
+    .footerset{
+        min-width: 1200px;
+        direction:rtl;
+        display:block !important;
+    }
+    .subscribe{
+        direction:ltr;
+        margin-left:120px;
+    }
+}
+.copyright p {
+    direction :rtl;
+    text-align:center !important;
+}
+.userIform input{
+    height:40px !important;
+    font-size:16px !important;
+}
+.camera_wrap{
+    box-sizing: content-box !important;
+}
+.slideimage{
+    width: 570px !important;
+    height: 356px !important;
+}
+.camera_wrap{
+    /*background: url("img/slides/camera/slide1/img1.jpg");*/
+    direction: ltr !important;
+}
+div.icon {
+    float:right !important;
+}
+.bx-viewport{
+    direction: ltr !important;
+}

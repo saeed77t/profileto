@@ -10,25 +10,49 @@
  */
 
 ?>
+</div>
+<footer>
+    <div class="container">
+        <div class="row footerset">
+            <div class="span4">
+                <?php if (is_active_sidebar('footer_1')) : ?>
+                    <?php dynamic_sidebar('footer_1'); ?>
+                <?php endif; ?>
+            </div>
+            <div class="span4">
+                <?php if (is_active_sidebar('footer_2')) : ?>
+                    <?php dynamic_sidebar('footer_2'); ?>
+                <?php endif; ?>
+            </div>
+            <div class="span4">
+                <?php if (is_active_sidebar('footer_3')) : ?>
+                    <?php dynamic_sidebar('footer_3'); ?>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+    <div id="sub-footer">
+        <div class="container">
+            <div class="row">
+                <div class="span12">
+                    <?php if (is_active_sidebar('sub_footer_copyright')) : ?>
+                        <?php dynamic_sidebar('sub_footer_copyright'); ?>
+                    <?php endif; ?>
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'profileto' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'profileto' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'profileto' ), 'profileto', '<a href="http://underscores.me/">saeed</a>' );
-				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
 </div><!-- #page -->
 
-<?php wp_footer(); ?>
+<?php wp_footer();
+
+?>
+
 
 </body>
 </html>

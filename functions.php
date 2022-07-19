@@ -218,3 +218,23 @@ if ( class_exists( 'ACF' ) ) {
     require get_template_directory() . '/inc/acf-functions.php';
 }
 
+
+
+//if ( class_exists( 'ACF' ) ) {
+//    require get_template_directory() . '/inc/userform-action.php';
+//}
+
+
+add_action( 'woocommerce_account_content', 'action_woocommerce_account_content' );
+function action_woocommerce_account_content(  ) {
+    global $current_user; // The WP_User Object
+
+
+};
+
+/**
+ * ajax  additions.
+ */
+require get_template_directory() . '/inc/ajax.php';
+
+
