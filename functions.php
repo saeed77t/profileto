@@ -229,7 +229,7 @@ add_action( 'woocommerce_account_content', 'action_woocommerce_account_content' 
 function action_woocommerce_account_content(  ) {
     global $current_user; // The WP_User Object
 
-    echo '<p>' . __("This is an addition…", "woocommerce") . '</p>';
+
 };
 
 /**

@@ -192,8 +192,9 @@ if (isset($_GET['userid'])):
                                             <?php if (isset($cuserPhoneNumber) && strlen($cuserPhoneNumber[0]) > 2) { ?>
                                                 <li>
                                                     <span class="title">تلفن : </span>
-                                                    <span class="value"><a
-                                                                href="tel:+5511981724236">98172-4236</a></span>
+                                                    <span class="value">
+
+                                                        <a href="tel:<?php echo $cuserPhoneNumber[0]; ?>"><?php echo $cuserPhoneNumber[0]; ?></a></span>
                                                 </li>
                                             <?php } ?>
                                         </ul>
