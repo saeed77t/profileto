@@ -1,7 +1,8 @@
 <style>
 
 </style>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+
+<link id="lnk1" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <link rel="stylesheet" href="<?php echo PROFILETO_THEME_URI ;?>/assets/font-awesome/css/font-awesome.min.css">
 <?php
@@ -47,5 +48,23 @@ defined('ABSPATH') || exit;
 <?php
 
 ?>
+<script>
+    (function ($) {
+        var elementlink = $('#lnk1');
+        if ($(window).width() < 1190) {
+            elementlink.remove();
+        }
+        else {
 
+        }
+
+        $('#btncopy').click(function (e) {
+            e.preventDefault();
+          let copyvall =  $(this).attr('overlay');
+            navigator.clipboard.writeText(copyvall);
+            $(this).children('a').text('آدرس به کلیپ بورد شما کپی شد ! ')
+
+        });
+    })(jQuery);
+</script>
 

@@ -306,3 +306,17 @@ div.icon {
 .bx-viewport{
     direction: ltr !important;
 }
+@media (max-width:  970px) {
+    .gridrender {
+        width: 100%;
+        display: block;
+        margin: 20px auto;
+    }
+    .colholder {
+        min-height: 950px;
+    }
+}
+.btnholder{
+    width: fit-content;
+    margin: 10px auto;
+}

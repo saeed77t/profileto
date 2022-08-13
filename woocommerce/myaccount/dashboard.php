@@ -86,9 +86,11 @@ $cuserResume= get_user_meta(  $CuserID,   'userResume' );
     $userurl = $UserData ->user_url;
 
     ?>
-
+<div class="btnholder">
 <button class="btn btn-lg btn-info"><a style="text-decoration: none; color: white;"  href="<?php echo 'profile'.DIRECTORY_SEPARATOR.'?userid='.$CuserID?>">  مشاهده صفحه پروفایل</a></button>
-<div class="infoForm">
+<button class="btn btn-lg btn-danger" id="btncopy"   overlay="<?php echo get_site_url().DIRECTORY_SEPARATOR.'profile'.DIRECTORY_SEPARATOR.'?userid='.$CuserID?>" ><a style="text-decoration: none; color: white;"  > کپی  لینک پروفایل شما </a></button>
+</div>
+    <div class="infoForm">
 <div class="rico-credits">
     <h2 class="text-center mb-3">فرم نمایش اطالاعات </h2>
 </div>

@@ -26,7 +26,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
 <div class="u-columns " id="customer_login">
     <div class="colholder">
 
-        <div class="u-column1 col1">
+        <div class="u-column1 col1 gridrender">
 
             <?php endif; ?>
 
@@ -74,7 +74,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
 
         </div>
 
-        <div class="u-column2 col2">
+        <div class="u-column2 col2 gridrender">
 
             <h2><?php esc_html_e('Register', 'woocommerce'); ?></h2>
 
